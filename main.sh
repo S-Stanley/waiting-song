@@ -1,15 +1,15 @@
-
 #!/bin/bash
 
-afplay ./assets/generique.mp3 &
+afplay ~/.waiting-song/assets/generique.mp3 &
 
-$1
+"$@"
 
 kill $!
 
 retVal=$?
 if [ $retVal -ne 0 ]; then
+    afplay ~/.waiting-song/assets/not-good.mp3
     exit 1
 fi
-afplay ./assets/mario.mp3
+afplay ~/.waiting-song/assets/sigma.mp3
 exit 0
